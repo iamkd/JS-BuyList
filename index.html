@@ -2,12 +2,49 @@
 <html>
 <head lang="uk">
     <meta charset="UTF-8">
-    <title>My Page</title>
-
-
+    <title>Very Cool Shopping Cart</title>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-<h1>Hello World</h1>
+    <div class="cart-wrap">
+        <div class="list-wrap">
+            <div class="list-input-wrap">
+                <input class="list-input" placeholder="Item name">
+                <button class="list-button" type="button">Add</button>
+            </div>
+            <div class="list">
+                <div class="list-item">
+                    <div class="item-name">Test</div>
+                    <div class="item-count">
+                        <button class="round-button substract">
+                            <i>-</i>
+                        </button>
+                        <span class="counter">1</span>
+                        <button class="round-button add">
+                            <i>+</i>
+                        </button>
+                    </div>
+                    <div class="item-controls">
+                        <button class="buy-button">Bought</button>
+                        <button class="remove-button">x</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="summary">
+            <div class="summary-section summary-title">
+                Left
+            </div>
+            <div class="summary-section">
+                
+            </div>
+            <div class="summary-section summary-title">
+                Bought
+            </div>
+             <div class="summary-section">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
