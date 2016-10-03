@@ -32,6 +32,7 @@ button {
 
 .list-wrap {
     flex: 3 1 400px;
+    min-width: 400px;
     min-height: 100px;
     height: 100%;
 }
@@ -91,6 +92,34 @@ button {
     color: white;
     font-weight: bold;
     border: none;
+    position: relative;
+}
+
+.round-button::after {
+    content: attr(data-tooltip);
+
+    width: 120px;
+    background-color: #b928ff;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    top: -15px;
+    left: -43px;
+    z-index: 1;
+    opacity: 0;
+
+    transition: top .5s, visibility 0s, opacity .5s;
+}
+
+.round-button:hover::after {
+    visibility: visible;
+    top: -35px;
+    opacity: 1;
+    transition: top .5s, visibility 0s, opacity .5s;
 }
 
 .list-item .item-count .round-button i {
@@ -156,4 +185,80 @@ button {
 
 .summary-section:last-child {
     border-bottom: none;
+}
+
+span.label {
+    display: inline-block;
+    font-size: 0.8rem;
+    line-height: 1;
+    font-weight: bolder;
+    background-color: #EAEAEA;
+    color: #555;
+    border-radius: 3px;
+    padding: .5833em .833em;
+    vertical-align: baseline;
+}
+
+span.label .label-count {
+    display: inline-block;
+    font-size: 0.7rem;
+    background-color: #F2711C;
+    border-radius: 50%;
+    min-width: 2em;
+    min-height: 2em;
+    padding: .5em;
+    line-height: 1em;
+    text-align: center;
+    color: white;
+}
+
+
+.badge {
+    position: fixed;
+    bottom: -50px;
+    left: 20px;
+    width: 140px;
+    text-align: left;
+    background-color: #b928ff;
+    color: white;
+    padding: 15px 10px 10px 15px;
+    border-radius: 7px 7px 0 0;
+    transition: bottom .5s, background-color .5s;
+}
+
+.badge:hover {
+    bottom: 0;
+    background-color: #632cff;
+}
+
+.badge h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.badge p {
+    font-size: 14px;
+}
+
+.badge .name {
+    font-size: 18px;
+}
+
+@media print {
+    .badge {
+        border: 1px solid black;
+        background-color: unset;
+        color: black;
+        bottom: 0;
+    }
+
+    .badge h3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cart-wrap {
+
+    }
 }
